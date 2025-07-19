@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="script.js"></script>
+    <title>Lingson Electronics</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- fonts logo-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font redirecting-box -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="navigation-bar">
+      
+      <div class="logo">
+        <p >Lingson Electronics</p>
+      </div>
+    </div>
+    <button id="toggleSidebar" onclick="togglemenu()">Menu</button>
+    <div class="sidebar">
+      
+      <div class="sidebar-btn">
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/warehouse.png">
+      <button data-option="home" class="option-button">Home</button>
+      </div>
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/appliances.png">
+      <button data-option="product" class="option-button">Product</button>
+      </div>
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/attendance.png">
+      <button data-option="attendance" class="option-button">Attendance</button>
+      </div>
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/bar-chart.png">
+      <button data-option="statistics" class="option-button">statistics</button>
+      </div>
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/report.png">
+      <button data-option="stock" class="option-button">Stock</button>
+      </div>
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/cash.png">
+      <button data-option="balance" class="option-button">Balance</button>
+      </div>
+      <div class="sidebar-btn-holder">
+      <img draggable="false" src="./icon-assets/notification.png">
+      <button data-option="Notification" class="option-button">Notification</button>
+      </div>
+    </div>
+  </div>
+  <div style="display:none" data-content="attendance" class="main-content attendance-content">
+    
+    <div class="staff-container" id="staffContainer">
+    </div>
+    <div class="calender-container">
+      <div class="calender-back">
+        <div class="calenderheader">
+          <div class="month">
+            June 2025
+          </div>
+        </div>
+        <div class="date-containers">
+          <div class="weekday">Mon</div>
+          <div class="weekday">Tue</div>
+          <div class="weekday">Wed</div>
+          <div class="weekday">Thu</div>
+          <div class="weekday">Fri</div>
+          <div class="weekday">Sat</div>
+          <div class="weekday">Sun</div>
+          <div class="day pseudo">26</div>
+          <div class="day pseudo">27</div>
+          <div class="day pseudo">28</div>
+          <div class="day pseudo">29</div>
+          <div class="day pseudo">30</div>
+          <div class="day pseudo">31</div>
+          <div class="day">1</div>
+          <div class="day">2</div>
+          <div class="day">3</div>
+          <div class="day">4</div>
+          <div class="day">5</div>
+          <div class="day">6</div>
+          <div class="day">7</div>
+          <div class="day">8</div>
+          <div class="day">9</div>
+          <div class="day">10</div>
+          <div class="day">11</div>
+          <div class="day">12</div>
+          <div class="day">13</div>
+          <div class="day">14</div>
+          <div class="day">15</div>
+          <div class="day">16</div>
+          <div class="day">17</div>
+          <div class="day">18</div>
+          <div class="day">19</div>
+          <div class="day">20</div>
+          <div class="day">21</div>
+          <div class="day">22</div>
+          <div class="day">23</div>
+          <div class="day">24</div>
+          <div class="day">25</div>
+          <div id="current-day" class="day">26</div>
+          <div class="day">27</div>
+          <div class="day">28</div>
+          <div class="day">29</div>
+          <div class="day">30</div>
+          <div class="day pseudo">1</div>
+          <div class="day pseudo">2</div>
+          <div class="day pseudo">3</div>
+          <div class="day pseudo">4</div>
+          <div class="day pseudo">5</div>
+          <div class="day pseudo">6</div>
+        </div>
+<div class="attendance-controls">
+  <h3 id="dateDetails">[Select a date]</h3>
+  <div class="attendance-controls-buttons">
+    <button id="saveAttendance">Save</button>
+    <button id="clearAttendance">ClEd</button>
+  </div>
+  <p id="attendanceSummary"></p>
+</div>
+
+
+      </div>
+    </div>
+  </div>
+  <div  style="display:block" data-content="product" class="main-content product-content">
+    <div class="icon-box">
+      <div class="icon-container">
+        <img
+          draggable="false"
+          src="./icon-assets/frigde-icon.png"
+        />
+        <img draggable="false" src="./icon-assets/washing-machine--icon.png" />
+        <img draggable="false" src="./icon-assets/ac--icon.png " />
+        <img draggable="false" src="./icon-assets/speaker-icon.png" />
+        <img draggable="false" src="./icon-assets/tv--icon.png" />
+      </div>
+      <div style="margin: 2em 0 0 0"><hr /></div>
+      <div class="content">
+        <div class="redirecting-box">
+          <div class="redirectingbox-content">
+            <button class="btn clicked" data-filter="all">ALL</button>
+            <button class="btn" data-filter="lg">LG</button>
+            <button class="btn" data-filter="whirlpool">whirlpool</button>
+            <button class="btn" data-filter="voltas">Voltas</button>
+            <button class="btn" data-filter="samsung">Samsung</button>
+            <button class="btn" data-filter="haier">Haier</button>
+
+            <button class="btn" data-filter="accessories">accessories</button>
+          </div>
+        </div>
+      </div>
+      <div class="productpage">
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SB-GL-D201ABCU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D201ASCU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SB-GL-D211HBCZ.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D211HBCZ</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SB-GL-D211HBIZ.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D211HBIZ</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SB-GL-D241ABAU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D241ABAU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SB-GL-D241ABCU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D241ABCU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SG-GL-D211HPZZ.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D211HPZZ</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SG-GL-D241APZU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D241APZU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SR-GL-D201ASEU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D201ASEU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SR-GL-D241ASMU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D241ASMU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SV-GL-D201ABEU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D201ABEU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SV-GL-D201ABPU.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D201ABPU</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="lg">
+          <h1>LG</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/LG5SV-GL-D211HBEZ.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">GL-D211HBEZ</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <!-- SAMSUNG -->
+
+        <div class="product-box" data-item="samsung">
+          <h1>Samsung</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/SAM5SB-RR21D2H259U.avif" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">RR21D2H259U</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="samsung">
+          <h1>Samsung</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/SAM5SR-RR20D2825HN.avif" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">RR20D2825HN</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="samsung">
+          <h1>Samsung</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/SAM5SV-RR21D2H259R.avif" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">RR21D2H259R</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="samsung">
+          <h1>Samsung</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/SAM5SB-RR23D2H359U.avif" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">RR23D2H359U</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <!-- whirlpool -->
+
+        <div class="product-box" data-item="whirlpool">
+          <h1>Whirlpool</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/WH5SB-73260.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">73260</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="whirlpool">
+          <h1>Whirlpool</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/WH5SB-73161.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">73260</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="whirlpool">
+          <h1>Whirlpool</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/WH5SR-73262.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">73262</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="whirlpool">
+          <h1>Whirlpool</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/WH5SR-73160.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">73262</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <!-- Voltas -->
+        <div class="product-box" data-item="voltas">
+          <h1>Voltas</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/VO5SB-1101035.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">1101035</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="voltas">
+          <h1>Voltas</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/VO5SR-1101036.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">1101035</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <div class="product-box" data-item="voltas">
+          <h1>Voltas</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/VO5SB-1101007.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">1101007</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="voltas">
+          <h1>Voltas</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/VO5SR-1101008.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">1101008</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="voltas">
+          <h1>Voltas</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/VO5SR-1100736.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">1100736</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="voltas">
+          <h1>Voltas</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/VO5SV-1100790.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">1100790</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+        <!-- Haier -->
+        <div class="product-box" data-item="haier">
+          <h1>Haier</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/HA5SB-HRD-2105PMR-P.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">HRD-2105PMR-P</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="haier">
+          <h1>Haier</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/HA5SB-HRD-2353PMD-P.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">HRD-2353PMD-P</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="haier">
+          <h1>Haier</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/HA5SB-HRD-2355PMD-P.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">HRD-2355PMD-P</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="haier">
+          <h1>Haier</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/HA5SR-HRD-2061SRN-N.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">HRD-2061SRN-N</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+
+        <div class="product-box" data-item="haier">
+          <h1>Haier</h1>
+          <div class="stars">
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+            <img src="./icon-assets/star.png" />
+          </div>
+
+          <div class="img-holder">
+            <img draggable="false" src="./Fridge/HA5SV-HRD-2263PMR-N.png" />
+          </div>
+
+          <div class="box-buttons">
+            <p class="model-id">HRD-2263PMR-N</p>
+            <p class="cart-btn">Add to Cart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display:none" data-content="balance" class="main-content attendance">
+    <div class="calender-container">
+      <div class="calender-back">
+        <div class="calenderheader">
+          <div class="month">
+            June 2025
+          </div>
+        </div>
+        <div class="date-containers">
+          <div class="weekday">Mon</div>
+          <div class="weekday">Tue</div>
+          <div class="weekday">Wed</div>
+          <div class="weekday">Thu</div>
+          <div class="weekday">Fri</div>
+          <div class="weekday">Sat</div>
+          <div class="weekday">Sun</div>
+          <div class="day pseudo">26</div>
+          <div class="day pseudo">27</div>
+          <div class="day pseudo">28</div>
+          <div class="day pseudo">29</div>
+          <div class="day pseudo">30</div>
+          <div class="day pseudo">31</div>
+          <div class="day">1</div>
+          <div class="day">2</div>
+          <div class="day">3</div>
+          <div class="day">4</div>
+          <div class="day">5</div>
+          <div class="day">6</div>
+          <div class="day">7</div>
+          <div class="day">8</div>
+          <div class="day">9</div>
+          <div class="day">10</div>
+          <div class="day">11</div>
+          <div class="day">12</div>
+          <div class="day">13</div>
+          <div class="day">14</div>
+          <div class="day">15</div>
+          <div class="day">16</div>
+          <div class="day">17</div>
+          <div class="day">18</div>
+          <div class="day">19</div>
+          <div class="day">20</div>
+          <div class="day">21</div>
+          <div class="day">22</div>
+          <div class="day">23</div>
+          <div class="day">24</div>
+          <div class="day">25</div>
+          <div id="current-day" class="day">26</div>
+          <div class="day">27</div>
+          <div class="day">28</div>
+          <div class="day">29</div>
+          <div class="day">30</div>
+          <div class="day pseudo">1</div>
+          <div class="day pseudo">2</div>
+          <div class="day pseudo">3</div>
+          <div class="day pseudo">4</div>
+          <div class="day pseudo">5</div>
+          <div class="day pseudo">6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    
+  </body>
+</html>
